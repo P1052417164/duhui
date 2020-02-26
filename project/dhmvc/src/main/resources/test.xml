@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd"
+    default-autowire="byName">
+    <!-- 配置数据源：第二种，通过读取配置文件获取数据库连接信息 -->
+    <!-- 第一步，读取配置文件 -->
+    <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="locations">
+            <value>classpath:db.properties</value>
+        </property>
+    </bean>
+
+    <!-- </bean> 第二步，通过表达式将配置文件引入 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${driverClassName}"></property>
+        <property name="url" value="${url}"></property>
+        <property name="username" value="${username}"></property>
+        <property name="password" value="${password}"></property>
+    </bean>
+
+    <!-- 配置会话工厂 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+        <!-- 加载Mybatis全局配置文件 -->
+        <property name="configLocation" value="/WEB-INF/classes/mybatis/SqlMapConfig.xml" />
+    </bean>
+    <!-- 添加事务管理器 -->
+    <bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 配置事务作用策略（基于对目标方法名进行通配符匹配） -->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED" />
+            <tx:method name="insert*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="modify*" propagation="REQUIRED" />
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <tx:method name="del*" propagation="REQUIRED" />
+            <tx:method name="find*" read-only="true" />
+            <tx:method name="get*" read-only="true" />
+        </tx:attributes>
+
+    </tx:advice>
+    <!-- 指定切入点，织入切面 -->
+    <aop:config>
+        <aop:pointcut expression="execution(* biz.*.*(..))" id="myPoint" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="myPoint" />
+    </aop:config>
+</beans>
