@@ -7,7 +7,7 @@ public class Test {
 	static class OOMObject {
 
 	}
-	public static void main(String[] arts) {
+	public static void mains(String[] arts) {
 		List<OOMObject> list = new ArrayList<OOMObject>();
 		int i = 0;
 		while (true) {
