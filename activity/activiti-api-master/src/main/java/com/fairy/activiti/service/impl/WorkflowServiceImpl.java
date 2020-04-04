@@ -44,6 +44,7 @@ import java.util.zip.ZipInputStream;
 public class WorkflowServiceImpl implements WorkflowService {
 	private static final String PROCESS_DEFINITON_KEY = "myProcess";
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(WorkflowServiceImpl.class);
 
 	@Autowired

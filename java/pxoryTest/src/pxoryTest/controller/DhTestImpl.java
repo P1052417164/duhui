@@ -1,6 +1,6 @@
 package pxoryTest.controller;
 
-public class DhTestImpl {
+public class DhTestImpl implements DhTest{
 
 	public void sayHello() {
 		// TODO Auto-generated method stub

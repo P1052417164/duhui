@@ -1,7 +1,7 @@
 package javaSeTest;
 
 public class SingleTest {
-	protected void SingleTest() {
-
+	protected SingleTest() {
+		System.out.print("");
 	}
 }

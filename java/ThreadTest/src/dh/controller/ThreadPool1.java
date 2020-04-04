@@ -1,6 +1,5 @@
 package dh.controller;
 
-import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -8,6 +7,7 @@ import java.util.concurrent.FutureTask;
 
 public class ThreadPool1 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		ExecutorService cachePool = Executors.newCachedThreadPool();
 
