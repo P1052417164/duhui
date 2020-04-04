@@ -1,4 +1,4 @@
-package dh.controller;
+package threadTest.controller;
 
 public class Thread2 extends Thread {
 	private static boolean flag = false;
