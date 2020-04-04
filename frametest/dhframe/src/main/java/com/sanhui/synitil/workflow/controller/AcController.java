@@ -44,6 +44,7 @@ public class AcController {
 	private RedisUtil redisUtil;
 	@Autowired
 	private KafkaSen kafkaSen;
+	@SuppressWarnings("unused")
 	@RequestMapping("/getUserById")
 	public Map<String, Object> getUser(HttpServletRequest request) {
 		Map<String, Object> dd = new HashMap<String, Object>();
@@ -154,6 +155,7 @@ public class AcController {
 		consumer.start();
 		return "1";
 	}
+	@SuppressWarnings("unused")
 	@GetMapping("/testRocketMqGet")
 	public String testRocketMqGet() throws MQClientException {
 		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("dhCGroup");
@@ -162,6 +164,7 @@ public class AcController {
 
 		return "1";
 	}
+	@SuppressWarnings({ "unused", "unlikely-arg-type" })
 	public static void main(String[] args) {
 		String a = "hello";
 		String b = "hello";

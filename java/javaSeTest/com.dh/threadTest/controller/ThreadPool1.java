@@ -19,7 +19,7 @@ public class ThreadPool1 {
 		try {
 			int ii = result.get();
 		} catch (InterruptedException | ExecutionException e) {
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		}
 		RunnableTest1 d = new RunnableTest1();

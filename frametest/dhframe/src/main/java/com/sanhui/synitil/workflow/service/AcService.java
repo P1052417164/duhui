@@ -26,18 +26,21 @@ public class AcService {
 	private AcMapper acMapper;
 	@Autowired
 	private RedisUtil redisUtil;
+
+	@SuppressWarnings("unused")
 	@Cacheable(cacheNames = "user", key = "'user:id:'+#dto.id")
 	public AcDto getUserById(AcDto dto) {
-		// TODO Auto-generated method stub
-		Object d=new Object();
+
+		Object d = new Object();
 		List<AcDto> dd = acMapper.getUserById(dto);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("sdd", dd);
 		return dd.get(0);
 	}
+
 	@Cacheable(cacheNames = "user", key = "'user:name:'+#dto.name")
 	public AcDto getUserByName(AcDto dto) {
-		// TODO Auto-generated method stub
+		// 
 		List<AcDto> dd = acMapper.getUserByName(dto);
 
 		return dd.get(0);
@@ -48,30 +51,27 @@ public class AcService {
 	// @CachePut(value = "user", key = "'user:name:'+#result.name"),
 	// @CachePut(value = "user", key = "'user:id:'+#result.id")})
 	// public AcDto updateUser(AcDto dto) {
-	// // TODO Auto-generated method stub
+	// // 
 	// acMapper.updateUser(dto);
 	// return dto;
 	// }
 	@Transactional
-	@Caching(put = {@CachePut(value = "user", key = "'user:name:'+#dto.name"),
-			@CachePut(value = "user", key = "'user:id:'+#dto.id")})
+	@Caching(put = { @CachePut(value = "user", key = "'user:name:'+#dto.name"), @CachePut(value = "user", key = "'user:id:'+#dto.id") })
 	public AcDto saveUser(AcDto dto) {
-		// TODO Auto-generated method stub
 
 		acMapper.saveUser(dto);
 		return dto;
 	}
-	@Caching(evict = {
-			@CacheEvict(value = "user", key = "'user:name:'+#dto.name"),
-			@CacheEvict(value = "user", key = "'user:id:'+#dto.id")})
+
+	@Caching(evict = { @CacheEvict(value = "user", key = "'user:name:'+#dto.name"), @CacheEvict(value = "user", key = "'user:id:'+#dto.id") })
 	public void deleteUser(AcDto dto) {
-		// TODO Auto-generated method stub
+
 		acMapper.deleteUser(dto);
 		redisUtil.del("user:name:hh");
 	}
+
 	@Transactional
 	public AcDto updateUser(AcDto dto) {
-		// TODO Auto-generated method stub
 		acMapper.updateUser(dto);
 		redisUtil.set("user:id:" + dto.getId(), dto);
 		return dto;

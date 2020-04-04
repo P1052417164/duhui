@@ -26,6 +26,7 @@ public class TestObject {
 		dh t = new dh();
 		return t.initC();
 	}
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		TestObject d = new TestObject();
 		dh f = d.new dh();

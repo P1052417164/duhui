@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DhApiTwo {
+	@SuppressWarnings("unused")
 	@RequestMapping("/SynOMS/search")
 	public String search(HttpServletRequest request,HttpServletResponse response) {
 		   int i=0;

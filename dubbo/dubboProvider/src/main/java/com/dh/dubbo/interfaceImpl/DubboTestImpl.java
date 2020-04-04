@@ -12,7 +12,7 @@ public class DubboTestImpl implements DubboTest {
 
 	@Override
 	public String getDh() {
-		// TODO Auto-generated method stub
+		// 
 		return "hello dh";
 	}
 

@@ -20,6 +20,7 @@ import com.sanhui.synitil.api.Aff;
 
 public class SynOmsApplication {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Aff dd = new Aff();
 		int[] dddd = {6, 5, 4, 3, 1, 2, 3, 4};

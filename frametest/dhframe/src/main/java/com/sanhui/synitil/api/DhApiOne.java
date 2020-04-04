@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DhApiOne {
-	 @RequestMapping("/SynOMS/login")
+	 @SuppressWarnings("unused")
+	@RequestMapping("/SynOMS/login")
 	public String login(HttpServletRequest request,HttpServletResponse response) {
 		   int i=0;
 			i++;

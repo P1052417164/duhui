@@ -9,7 +9,7 @@ public class RunnableTest1 implements Runnable {
     final int dd=0;
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		// 
 		// System.out.println(Thread.currentThread().getName());
 		// System.out.println("before");
 		lock.lock();
