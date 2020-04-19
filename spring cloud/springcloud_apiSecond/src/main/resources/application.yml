@@ -1,0 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:30001/eureka/,http://localhosttwo:30002/eureka/
+spring:
+  application:
+    name: apiSecond
+server:
+  #注册中心A使用的端口号
+  port: 8081

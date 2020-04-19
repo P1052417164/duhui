@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.dh.springcloud</groupId>
-    <artifactId>apiSecond</artifactId>
+    <artifactId>eurekaServerTwo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>apiSecond</name>
+    <name>eurekaServer</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,11 +21,12 @@
     <dependencies>
         <!-- 上边引入 parent，因此 下边无需指定版本 -->
         <!-- 包含 mvc,aop 等jar资源 -->
-        <dependency>
+<!--         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+ -->
+ 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -33,7 +34,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
             <version>2.2.2.RELEASE</version>
         </dependency>
 
