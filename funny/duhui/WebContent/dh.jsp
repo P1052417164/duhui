@@ -13,7 +13,7 @@
 	<video id='myvideo' width=1280 height=720 class="video-js vjs-default-skin" controls  autoplay="true" preload="auto" data-setup="{}">
 	    <source id="src1" src="rtmp://47.96.169.248:8081/duhui/dh" type='rtmp/flv'>
 	    <source id="src2" src="http://47.96.169.248/hls/dh.m3u8">
-	    <source id="src3" src="22.mp4" type="video/mp4">  
+	    <source id="src3" src="http://47.96.169.24/22.mp4" type="video/mp4">  
 	</video>
 </div>
 </body>

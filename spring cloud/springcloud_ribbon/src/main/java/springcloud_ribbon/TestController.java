@@ -19,7 +19,7 @@ public class TestController {
     @RequestMapping("/getTestMsg")
     public String getTestMsg() {
         RestTemplate rt = getRestTemplate();
-        String result = rt.getForObject("http://ServerProvide/ServerTest", String.class);
+        String result = rt.getForObject("http://apiFirst/", String.class);
         return result;
     }
 }

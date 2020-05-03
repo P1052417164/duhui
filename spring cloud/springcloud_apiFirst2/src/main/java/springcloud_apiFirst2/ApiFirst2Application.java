@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiFirst2Application {
     @RequestMapping("/")
     public String home() {
-        return "Hello world";
+        return "Hello world2";
     }
 
     public static void main(String[] args) {
