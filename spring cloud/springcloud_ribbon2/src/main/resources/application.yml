@@ -1,0 +1,11 @@
+server:
+  #服务调用者端口号
+  port: 8001
+spring:
+  application:
+    name: ribbonClient2
+eureka:
+  client:
+    service-url:
+      #将当前服务也注册到注册中心
+      defaultZone: http://localhost:30001/eureka/,http://localhosttwo:30002/eureka/
