@@ -1,4 +1,4 @@
-package springcloud_ribbon;
+package ribbonSecond;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;

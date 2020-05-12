@@ -1,4 +1,4 @@
-package springcloud_ribbon;
+package ribbonSecond;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableHystrix
-public class RibbonApplication {
+public class RibbonSecondApplication {
     @RequestMapping("/")
     public String home(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String userAgent = request.getHeader("User-Agent");
@@ -36,6 +36,6 @@ public class RibbonApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(RibbonApplication.class, args);
+        SpringApplication.run(RibbonSecondApplication.class, args);
     }
 }

@@ -2,9 +2,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.dh.springcloud</groupId>
-    <artifactId>ribbon</artifactId>
+    <artifactId>ribbon2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ribbon</name>
+    <name>ribbon2</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
