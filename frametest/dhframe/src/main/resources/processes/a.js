@@ -1,0 +1,6 @@
+var duhui = function() {
+    return {
+
+    }
+}();
+
